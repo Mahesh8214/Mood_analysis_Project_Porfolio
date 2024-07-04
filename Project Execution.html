@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Execution Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff7f50;
+            text-align: center;
+        }
+        h2 {
+            color: #ff7f50;
+        }
+        p {
+            color: #333;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .step img {
+            max-width: 100%;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        
+
+    .git-section {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .git-container {
+        position: relative;
+       
+    }
+
+
+    #git-link {
+        
+        width: 100%;
+        background-color: #1e1e1e; /* Dark background */
+        color: #abb2bf; /* Text color */
+        font-family: 'Courier New', Courier, monospace;
+        padding: 19px;
+        border: 1px solid #333; /* Dark border */
+        border-radius: 5px;
+    }
+
+    .git-protocol {
+        color: #569cd6; /* Blue color for protocol */
+    }
+
+    .git-domain {
+        color: #ce9178; /* Red color for domain */
+    }
+
+    .git-owner {
+        color: #4ec9b0; /* Green color for owner */
+    }
+
+    .git-repo {
+        color: #dcdcaa; /* Yellow color for repository name */
+    }
+
+    button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #333; /* Dark button background */
+        color: #fff; /* Button text color */
+        border: none;
+        padding: 8px 12px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #555; /* Dark hover effect */
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Project Execution Guide</h1>
+        <div class="step">
+            <h2>Introduction</h2>
+            <p>Your project aims to provide a seamless experience for students and parents through a Flutter-based application and a web-based dashboard.</p>
+        </div>
+        <div class="step">
+            <h2>Project Setup</h2>
+            <p>To get started, follow these steps:</p>
+            <ol>
+                <li>Install Flutter SDK verison  <strong> >=3.2.3 <4.0.0 </strong> .</li>
+                <li>Clone the student application repository.</li>
+                <div class="git-section">
+                    <h2>Git Repository</h2>
+                    <div class="git-container">
+                        <p id="git-link"> <span class="git-protocol">https://</span><span class="git-domain">github.com/</span><span class="git-owner">yourusername/</span><span class="git-repo">yourrepository</span>
+                        </p>
+                        <button onclick="copyToClipboard(this)" id="copyButton">Copy Git Link</button>
+                        
+                    </div>
+                </div>
+                
+                
+                <li>Configure Firebase for authentication and database in student side application.</li>
+                <li>Access the parent web page repository.</li>
+                <li>Configure Firebase for authentication and database.</li>
+            </ol>
+        </div>
+        <div class="step">
+            <h2>Student Side Application</h2>
+            <p>The student side application allows users to:</p>
+            <ul>
+                <li>Log in with their credentials.</li>
+                <li>Use the keyboard for sentence input.</li>
+                <li>Automatically detect and send sentences to the Firebase Realtime Database.</li>
+            </ul>
+        </div>
+        <div class="step">
+            <h2>Parent Side Web Page</h2>
+            <p>The parent side web page provides:</p>
+            <ul>
+                <li>Setup python framework flask in your enviroment </li>
+                <li>Install all the requirements file by running below code </li>
+                <div class="git-section">
+                    <div class="git-container">
+                        <p id="git-link" style="color: #fff;"> pip install -r requirements.txt
+                        </p>
+                        <button onclick="copyToClipboard(this)" id="copyButton">Copy Git Link</button>
+                    </div>
+                </div>
+                <li>Setup the firebase credential same as student side  </li>
+                <li>Add the firebase key for retriving data  </li>
+                <li> Then run the app.py file</li>
+                <li>It will show you the login then there is analysis of the mood student</li>
+            </ul>
+        </div>
+        <div class="step">
+            <h2>Additional Features</h2>
+            <p>In addition to the core functionalities, the project also includes:</p>
+            <ul>
+                <li>Real-time synchronization between student and parent sides.</li>
+                <li>Customizable user profiles.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>&copy; Government Polytechnic college , kota , 2024</p>
+        </div>
+    </div>
+
+    <script>
+
+
+
+   function copyToClipboard(element) {
+  const text = element.previousElementSibling.textContent;
+  navigator.clipboard.writeText(text).then(() => {
+   changeButtonText(element,"Copied!")
+    // Optionally, show a notification or change the icon to indicate success
+  }).catch(err => {
+    console.error('Failed to copy text: ', err);
+    // Optionally, show an error message or change the icon to indicate failure
+  });
+}
+
+function changeButtonText(button, text) {
+    button.innerText = text;
+}
+
+</script>
+
+</body>
+</html>
